@@ -2,116 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ankit's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faith is Fiction</title>
   <style>
-    /* Base Reset */
+    /* Reset margins and padding for all elements */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* Main body styling */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
-      color: #eee;
-      line-height: 1.6;
-    }
-
-    header {
-      height: 100vh;
-      background: linear-gradient(145deg, #000000, #1a1a1a);
+      font-family: 'Arial', sans-serif;
+      background: #1e1e1e;
+      color: white;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
       text-align: center;
-      padding: 2rem;
-      animation: fadeIn 2s ease-in-out;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    /* Container that holds everything */
+    .intro-container {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 1s ease, transform 1s ease;
+      text-align: center;
+    }
+
+    /* Reveal the container after page load */
+    body.loaded .intro-container {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Title Styling */
+    h1, h2, p, .cta-button {
+      opacity: 0;
+      transform: translateY(30px);
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #00ffc8;
-      animation: slideDown 1s ease-out;
+      font-weight: 700;
+      color: #f39c12;
+      animation-name: fadeInUp;
+      animation-delay: 0s; /* Immediate */
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      animation-name: fadeInUp;
+      animation-delay: 0.5s; /* Delay */
     }
 
     p {
       font-size: 1.2rem;
-      color: #aaa;
+      margin-top: 20px;
+      color: #ddd;
+      animation-name: fadeInUp;
+      animation-delay: 1s; /* Delay */
     }
 
-    nav {
-      margin-top: 2rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #00ffd5;
-      margin: 0 1rem;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border: 1px solid transparent;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      border-bottom: 2px solid #00ffd5;
+    .cta-button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #f39c12;
       color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      animation-name: fadeInUp;
+      animation-delay: 1.5s; /* Delay */
     }
 
-    main {
-      padding: 4rem 2rem;
-      max-width: 800px;
-      margin: auto;
+    .cta-button:hover {
+      background-color: #e67e22;
     }
 
-    section {
-      margin-top: 3rem;
+    /* Keyframe for fade-in effect */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
   </style>
 </head>
-<body>
+<body class="loaded">
 
-  <header>
-    <h1>Welcome to My Site !!!</h1>
-    <p>Created by Ankit Anand, a 14-year-old Physics Enthusiast, Learning in the Shadows.</p>
-    <nav>
-      <a href="posts.html">Posts</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>This is a simple, elegant personal website template made only with HTML and CSS. You can use it to showcase your portfolio, share your work, or write about your interests.</p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
+  <!-- Container for the intro content -->
+  <div class="intro-container">
+    <h1>Welcome to Faith is Fiction</h1>
+    <h2>By <span class="highlight">Ankit Anand</span></h2>
+    <p class="intro-text">
+      A 14-year-old <span class="highlight">Physics</span> enthusiast, learning and creating in the shadows.
+    </p>
+    <p class="intro-text">
+      I'm just starting out in the world of web development, and this site is my humble experiment.
+    </p>
+    <!-- Button that redirects to home.html -->
+    <button class="cta-button" onclick="window.location.href='home.html'">Enter</button>
+  </div>
 
 </body>
 </html>
