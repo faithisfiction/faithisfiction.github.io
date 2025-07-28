@@ -11,47 +11,53 @@
       box-sizing: border-box;
     }
 
-    body {
+    body, html {
+      height: 100%;
       font-family: 'Courier New', monospace;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       overflow: hidden;
     }
 
+    /* Fullscreen video background */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.4);
+    }
+
+    /* Centered content */
     .intro-container {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-      max-width: 600px;
-      width: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 0.5s;
+      color: white;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      max-width: 90%;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #f1c40f;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-      transform: translateY(-50px);
-      opacity: 0;
       animation: slideDown 1s ease forwards;
+      transform: translateY(-30px);
+      opacity: 0;
     }
 
     .typing-line {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-top: 20px;
-      color: #ddd;
       white-space: nowrap;
-      border-right: 2px solid #fff;
       overflow: hidden;
+      border-right: 2px solid #fff;
       width: 0;
       animation: typing 3s steps(40, end) forwards, blink 0.7s infinite;
     }
@@ -65,13 +71,13 @@
     }
 
     .cta-button {
-      margin-top: 40px;
+      margin-top: 30px;
       padding: 12px 30px;
-      font-size: 1.1rem;
       background: linear-gradient(135deg, #f39c12, #e67e22);
       border: none;
       border-radius: 8px;
       color: white;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: 0.3s;
       opacity: 0;
@@ -84,16 +90,9 @@
       transform: scale(1.05);
     }
 
-    /* Animations */
     @keyframes slideDown {
       to {
         transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      to {
         opacity: 1;
       }
     }
@@ -106,14 +105,27 @@
     @keyframes blink {
       50% { border-color: transparent; }
     }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="istockphoto-1134176012-640_adpp_is.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Main Content -->
   <div class="intro-container">
     <h1>Faith is Fiction</h1>
     <p class="typing-line typing-delay-1">By Ankit Anand, a 14-year-old Physics lover.</p>
-    <p class="typing-line typing-delay-2">Learning and creating in the shadows of code...</p>
+    <p class="typing-line typing-delay-2">Exploring science and coding in the shadows...</p>
     <button class="cta-button" onclick="window.location.href='about.html'">Enter</button>
   </div>
+
 </body>
 </html>
