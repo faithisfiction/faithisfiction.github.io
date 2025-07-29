@@ -17,7 +17,6 @@
       overflow: hidden;
     }
 
-    /* Fullscreen video background */
     #bg-video {
       position: fixed;
       right: 0;
@@ -29,7 +28,6 @@
       filter: brightness(0.4);
     }
 
-    /* Centered content */
     .intro-container {
       position: absolute;
       top: 50%;
@@ -37,15 +35,16 @@
       transform: translate(-50%, -50%);
       text-align: center;
       color: white;
-      padding: 30px;
+      padding: 20px;
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 15px;
       backdrop-filter: blur(10px);
       max-width: 90%;
+      width: 500px;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #f1c40f;
       animation: slideDown 1s ease forwards;
       transform: translateY(-30px);
@@ -53,8 +52,8 @@
     }
 
     .typing-line {
-      font-size: 1.2rem;
-      margin-top: 20px;
+      font-size: 1rem;
+      margin-top: 15px;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #fff;
@@ -71,13 +70,13 @@
     }
 
     .cta-button {
-      margin-top: 30px;
-      padding: 12px 30px;
+      margin-top: 25px;
+      padding: 10px 24px;
       background: linear-gradient(135deg, #f39c12, #e67e22);
       border: none;
       border-radius: 8px;
       color: white;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
       opacity: 0;
@@ -108,6 +107,27 @@
 
     @keyframes fadeIn {
       to { opacity: 1; }
+    }
+
+    /* Responsive design */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .typing-line {
+        font-size: 0.9rem;
+      }
+
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+      }
+
+      .intro-container {
+        padding: 15px;
+        width: 95%;
+      }
     }
   </style>
 </head>
