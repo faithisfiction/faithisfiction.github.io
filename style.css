@@ -902,3 +902,63 @@ html{
     margin:0 auto;
 
 }
+
+/* ===========================
+   Contact Page
+=========================== */
+
+.contact-page{
+
+    min-height:100vh;
+
+    padding:180px 8% 100px;
+
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:70px;
+
+}
+
+.contact-grid .card{
+
+    padding:35px;
+
+}
+
+.contact-grid h3{
+
+    margin:20px 0 15px;
+
+    font-size:1.5rem;
+
+}
+
+.contact-grid p{
+
+    color:#c7d0e0;
+
+    line-height:1.7;
+
+}
+
+.contact-grid a{
+
+    color:#6fd3ff;
+
+    text-decoration:none;
+
+}
+
+.contact-grid a:hover{
+
+    text-decoration:underline;
+
+}
